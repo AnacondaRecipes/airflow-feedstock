@@ -1,6 +1,6 @@
 {% set name = "airflow" %}
-{% set version = "1.10.12" %}
-{% set sha256 = "9a281d4f2aff0a791646a64b226664bcfb9bce7749f7944684df5ead87074c1b" %}
+{% set version = "2.0.1" %}
+{% set sha256 = "b5d597a96c395a06e435fc31a91256973855b87c3580caf5a93160cfecd69144" %}
 
 package:
   name: {{ name|lower }}-split
