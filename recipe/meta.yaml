@@ -12,7 +12,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [ py<36]
+  skip: true  # [py<36]
+  # on Windows it is recommented by venture to use WSL service
+  # for running linux-64 version
+  skip: True  # [win]
   number: 1
 
 test:
