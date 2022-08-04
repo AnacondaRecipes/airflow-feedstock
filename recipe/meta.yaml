@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win or py<36]
-  number: 0
+  skip: true  # [py<36]
+  number: 1
 
 test:
   commands:
