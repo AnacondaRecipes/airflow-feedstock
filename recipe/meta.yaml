@@ -12,7 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [py<36]
+  # gunicorn, python-daemon not available on windows
+  skip: true  # [win or py<36]
   number: 1
 
 test:
