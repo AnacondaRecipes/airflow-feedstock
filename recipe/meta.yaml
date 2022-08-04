@@ -17,6 +17,7 @@ build:
   # for running linux-64 version
   skip: True  # [win]
   number: 1
+  # trigger: 0
 
 test:
   commands:
