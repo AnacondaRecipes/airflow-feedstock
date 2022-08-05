@@ -12,6 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  # Project doesn't provide native Windows support.  On Windows
+  # it is recommented to use instead linux-64 as WSL variant.
+  # For linux-s390x there is no yarn available
   skip: true  # [win or (linux and s390x)]
   number: 0
 
