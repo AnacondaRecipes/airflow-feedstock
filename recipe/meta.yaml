@@ -223,6 +223,7 @@ outputs:
         - eventlet >=0.9.7
         - gevent >=0.13
         - greenlet >=0.4.9
+        - dnspython >=2
     test:
       imports:
         - airflow
