@@ -202,9 +202,8 @@ outputs:
       requires:
         - pip
 
+{% if without_apache_webhdfs != true %}
   - name: {{ name }}-with-apache-webhdfs
-    build:
-      skip: True  # [without_apache_webhdfs]
     requirements:
       host:
         - python
@@ -222,6 +221,7 @@ outputs:
         - pip check
       requires:
         - pip
+{% endif %}
 
   - name: {{ name }}-with-async
     requirements:
