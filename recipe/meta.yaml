@@ -1,9 +1,10 @@
 {% set name = "airflow" %}
 {% set version = "2.3.3" %}
 {% set sha256 = "f32d27b9c9e5c3a87c5631011c321cb9f4e86b8f880209095fa36eb576bdc3a8" %}
+
 # for boostrapping we need to disable the ...with-apache-webhdfs
-# sub.  There is a cyclic dependency as one if its dependencies
-# requires an prior build apache-airflow package
+# sub-packate.  There is cyclic dependency as its dependencies
+# require an prior built apache-airflow package.
 # This can be turned off until next version bump of airflow
 {% set without_apache_webhdfs = true %}
 
