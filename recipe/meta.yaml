@@ -1,6 +1,10 @@
 {% set name = "airflow" %}
 {% set version = "2.3.3" %}
 {% set sha256 = "f32d27b9c9e5c3a87c5631011c321cb9f4e86b8f880209095fa36eb576bdc3a8" %}
+# for boostrapping we need to disable due a cyclic dependency
+# the ...with-apache-webhdfs sub.  After initial version present
+# this can be turned off until next version bump of airflow
+{% set bootstrapping = true %}
 
 package:
   name: {{ name|lower }}-split
@@ -198,6 +202,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-apache-webhdfs
+    build:
+      skip: True  # [bootstrapping]
     requirements:
       host:
         - python
