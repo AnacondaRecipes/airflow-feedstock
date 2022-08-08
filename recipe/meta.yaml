@@ -6,7 +6,7 @@
 # sub-packate.  There is cyclic dependency as its dependencies
 # require an prior built apache-airflow package.
 # This can be turned off until next version bump of airflow
-{% set without_apache_webhdfs = true %}
+{% set without_apache_webhdfs = false %}
 
 package:
   name: {{ name|lower }}-split
@@ -22,7 +22,7 @@ build:
   # it is recommented to use instead linux-64 as WSL variant.
   # For linux-s390x there is no yarn available
   skip: true  # [win or (linux and s390x)]
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
