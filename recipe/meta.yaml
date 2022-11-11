@@ -557,7 +557,7 @@ about:
     When workflows are defined as code, they become more maintainable,
     versionable, testable, and collaborative.
 
-  doc_url: http://pythonhosted.org/airflow/profiling.html
+  doc_url: https://airflow.apache.org/docs/
   dev_url: https://github.com/apache/airflow
 
 extra:
