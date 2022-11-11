@@ -538,7 +538,7 @@ outputs:
         - pip
 
 about:
-  home: http://airflow.apache.org
+  home: https://airflow.apache.org
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
