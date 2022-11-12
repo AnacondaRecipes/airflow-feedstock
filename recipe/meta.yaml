@@ -130,13 +130,8 @@ outputs:
         - airflow.cli
         - airflow.cli.commands
         - airflow.config_templates
-        - airflow.contrib
-        - airflow.contrib.hooks
-        - airflow.contrib.operators
-        - airflow.contrib.secrets
-        - airflow.contrib.sensors
-        - airflow.contrib.task_runner
-        - airflow.contrib.utils
+        - airflow.datasets
+        - airflow.dag_processing
         - airflow.example_dags
         - airflow.example_dags.subdags
         - airflow.executors
@@ -151,15 +146,16 @@ outputs:
         - airflow.mypy
         - airflow.mypy.plugin
         - airflow.operators
+        - airflow.providers
         - airflow.secrets
         - airflow.security
         - airflow.sensors
         - airflow.serialization
-        - airflow.smart_sensor_dags
         - airflow.task
         - airflow.task.task_runner
         - airflow.ti_deps
         - airflow.ti_deps.deps
+        - airflow.triggers
         - airflow.utils
         - airflow.utils.log
         - airflow.www
