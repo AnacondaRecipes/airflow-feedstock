@@ -272,7 +272,7 @@ outputs:
       imports:
         - airflow
         - cgroupspy
-        - airflow.contrib.task_runner.cgroup_task_runner
+        - airflow.task.task_runner.cgroup_task_runner
       commands:
         - pip check
       requires:
