@@ -1,6 +1,6 @@
 {% set name = "airflow" %}
-{% set version = "2.4.2" %}
-{% set sha256 = "9622ad2cbd88f2a859c61a15e9f7e72ba63ee731f0b20c668d83f8ae8ac43b12" %}
+{% set version = "2.4.3" %}
+{% set sha256 = "48c3b7bf89ee7846fe73f66451b84385dc4873184a44f73320f8fa5520ff9ed9" %}
 
 # for boostrapping we need to disable the ...with-apache-webhdfs
 # sub-packate.  There is cyclic dependency as its dependencies
