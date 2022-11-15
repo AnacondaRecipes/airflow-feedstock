@@ -109,6 +109,7 @@ outputs:
         - apache-airflow-providers-http
         - apache-airflow-providers-imap
         - apache-airflow-providers-sqlite
+        - apache-airflow-providers-common-sql
         # seems to be having trouble with openssl 3.
         # By including it as a dependency, we can explicitly check
         - openssl
