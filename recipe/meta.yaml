@@ -20,7 +20,8 @@ source:
 build:
   # Project doesn't provide native Windows support.  On Windows
   # it is recommented to use instead linux-64 as WSL variant.
-  skip: true  # [win]
+  # For linux-s390x, coreutils is not available
+  skip: true  # [win or (linux and s390x)]
   number: 0
 
 outputs:
