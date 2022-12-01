@@ -42,6 +42,8 @@ outputs:
         # seems to be having trouble with openssl 3.
         # By including it as a dependency, we can explicitly check
         - openssl
+        - setuptools
+        - wheel
       run:
         - python
         - alembic >=1.5.1,<2.0
