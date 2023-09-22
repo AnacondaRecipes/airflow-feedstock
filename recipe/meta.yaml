@@ -1,6 +1,5 @@
 {% set name = "airflow" %}
 {% set version = "2.4.3" %}
-{% set sha256 = "48c3b7bf89ee7846fe73f66451b84385dc4873184a44f73320f8fa5520ff9ed9" %}
 
 # for boostrapping we need to disable the ...with-apache-webhdfs
 # sub-packate.  There is cyclic dependency as its dependencies
@@ -13,16 +12,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/apache/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 48c3b7bf89ee7846fe73f66451b84385dc4873184a44f73320f8fa5520ff9ed9
 
 build:
+  number: 1
   # Project doesn't provide native Windows support.  On Windows
   # it is recommented to use instead linux-64 as WSL variant.
   # For linux-s390x, coreutils is not available
   skip: true  # [win or (linux and s390x)]
-  number: 0
 
 outputs:
   - name: {{ name }}
@@ -87,7 +85,7 @@ outputs:
         - marshmallow-oneofschema >=2.0.1
         - mdit-py-plugins >=0.3.0
         - packaging >=14.0
-        - pathspec >=0.9.0,<1.0
+        - pathspec >=0.9.0,<0.10.0
         - pendulum >=2.0
         - pluggy >=1.0
         - psutil >=4.2.0
@@ -99,7 +97,8 @@ outputs:
         - python-slugify >=5.0
         - rich >=12.4.4
         - setproctitle >=1.1.8
-        - sqlalchemy >=1.4
+        # Pin sqlalchemy <2, see https://github.com/apache/airflow/issues/28723
+        - sqlalchemy >=1.4,<2
         - sqlalchemy-jsonfield >=1.0
         - tabulate >=0.7.5
         - tenacity >=6.2.0
@@ -242,25 +241,23 @@ outputs:
       requires:
         - pip
 
-# this one isn't happy with openssl >=1.1.1n,<1.1.2a for some reason that
-# I can't reproduce easily with a local test
-#  - name: {{ name }}-with-celery
-#    requirements:
-#      host:
-#        - python
-#      run:
-#        - python
-#        - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
-#        - celery >=5.2.3,<6
-#        - flower >=1.0.0
-#    test:
-#      imports:
-#        - airflow
-#        - celery
-#      commands:
-#        - pip check
-#      requires:
-#        - pip
+  - name: {{ name }}-with-celery
+    requirements:
+      host:
+        - python
+      run:
+        - python
+        - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        - celery >=5.2.3,<6
+        - flower >=1.0.0
+    test:
+      imports:
+        - airflow
+        - celery
+      commands:
+        - pip check
+      requires:
+        - pip
 
   - name: {{ name }}-with-cgroups
     requirements:
