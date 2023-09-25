@@ -16,7 +16,7 @@ source:
   sha256: 48c3b7bf89ee7846fe73f66451b84385dc4873184a44f73320f8fa5520ff9ed9
 
 build:
-  number: 1
+  number: 2
   # Project doesn't provide native Windows support.  On Windows
   # it is recommented to use instead linux-64 as WSL variant.
   # For linux-s390x, coreutils is not available.
