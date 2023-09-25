@@ -19,8 +19,9 @@ build:
   number: 1
   # Project doesn't provide native Windows support.  On Windows
   # it is recommented to use instead linux-64 as WSL variant.
-  # For linux-s390x, coreutils is not available
-  skip: true  # [win or (linux and s390x)]
+  # For linux-s390x, coreutils is not available.
+  # The UnsatisfiableDependencies conflict with py311.
+  skip: true  # [win or (linux and s390x) or py>310]
 
 outputs:
   - name: {{ name }}
