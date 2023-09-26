@@ -27,6 +27,7 @@ outputs:
   - name: {{ name }}
     script: install_airflow.sh
     build:
+      skip: true  # [py>=311]
       entry_points:
         - airflow=airflow.__main__:main
     requirements:
@@ -169,6 +170,8 @@ outputs:
 
   # alternative name for the core package
   - name: apache-airflow
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -243,6 +246,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-celery
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -261,6 +266,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-cgroups
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -279,6 +286,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-cncf-kubernetes
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -296,6 +305,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-dask
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -316,6 +327,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-deprecated-api
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -333,6 +346,8 @@ outputs:
 
 
   - name: {{ name }}-with-github_enterprise
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -352,6 +367,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-google_auth
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -371,6 +388,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-kerberos
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -395,6 +414,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-ldap
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -413,6 +434,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-leveldb
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -430,6 +453,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-pandas
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -447,6 +472,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-password
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -465,6 +492,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-rabbitmq
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -482,6 +511,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-sentry
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -501,6 +532,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-statsd
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
@@ -518,6 +551,8 @@ outputs:
         - pip
 
   - name: {{ name }}-with-virtualenv
+    build:
+      skip: true  # [py>=311]
     requirements:
       host:
         - python
